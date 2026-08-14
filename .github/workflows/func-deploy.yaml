@@ -1,0 +1,29 @@
+name: Func Deploy
+"on":
+  push:
+    branches:
+      - main
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+      - name: Run tests
+        run: npm ci && npm test
+      - name: Setup Kubernetes context
+        uses: azure/k8s-set-context@v4
+        with:
+          kubeconfig: ${{ secrets.KUBECONFIG }}
+          method: kubeconfig
+      - name: Install func cli
+        uses: functions-dev/action@main
+        with:
+          name: func
+          version: knative-v1.22.0
+      - name: Deploy function
+        env:
+          FUNC_BUILDER: pack
+          FUNC_REGISTRY: ${{ vars.REGISTRY_URL }}
+          FUNC_VERBOSE: "true"
+        run: func deploy

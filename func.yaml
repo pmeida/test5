@@ -1,0 +1,14 @@
+# $schema: https://raw.githubusercontent.com/knative/func/main/schema/func_yaml-schema.json
+# yaml-language-server: $schema=https://raw.githubusercontent.com/knative/func/main/schema/func_yaml-schema.json
+specVersion: 0.36.0
+name: test5
+runtime: node
+registry: image-registry.openshift-image-registry.svc:5000/test5
+namespace: test5
+created: 2026-08-14T11:28:29.015964+01:00
+run:
+  envs:
+  - name: test
+    value: a
+  - name: test2
+    value: '{{ secret:builder-dockercfg-btbzt:.dockercfg }}'
