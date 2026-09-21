@@ -10,7 +10,7 @@
  * @param {object} context.log - Logging object with methods for 'info', 'warn', 'error', etc.
  * @param {object} context.headers - The HTTP request headers.d
  * @param {string} context.method - The HTTP request method.
- * @param {string} context.httpVersion - The HTTP protocol version.
+ * @param {string} context.httpVersion - The HTTP protocol version.s
  * @param {object} body - The request body if any.
  * @returns {object} HTTP response object.
  *
