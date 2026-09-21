@@ -1,0 +1,8 @@
+# $schema: https://raw.githubusercontent.com/knative/func/main/schema/func_yaml-schema.json
+# yaml-language-server: $schema=https://raw.githubusercontent.com/knative/func/main/schema/func_yaml-schema.json
+specVersion: 0.36.0
+name: test5
+runtime: node
+registry: image-registry.openshift-image-registry.svc:5000/test
+namespace: test
+created: 2026-09-21T11:00:21.793881+01:00
