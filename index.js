@@ -6,7 +6,7 @@
  * It can be tested with 'npm test'
  *
  * @param {Context} context - A context object.
- * @param {object} context.query - The query string deserialized as an object, if any.
+ * @param {object} context.query - The query string deserialized as an object, if any.d
  * @param {object} context.log - Logging object with methods for 'info', 'warn', 'error', etc.
  * @param {object} context.headers - The HTTP request headers.d
  * @param {string} context.method - The HTTP request method.
